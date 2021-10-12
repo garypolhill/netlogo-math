@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Extension-Name: math
+Class-Manager: uk.ac.hutton.netlogo.math.MathExtension
+NetLogo-Extension-API-Version: 6.2.0
