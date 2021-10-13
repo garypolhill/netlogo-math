@@ -12,6 +12,7 @@ import org.nlogo.api.PrimitiveManager;
  *
  */
 public class MathExtension extends DefaultClassManager {
+	static final String EXTENSION_NAME = "math";
 
 	@Override
 	public void load(PrimitiveManager primManager) throws ExtensionException {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="netlogo-math/zip/math.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/netlogo-math/math.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/netlogo-math/manifest.txt" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="false" exportJavaFiles="true" exportOutputFolder="true">
+        <file path="/netlogo-math/.classpath"/>
+        <file path="/netlogo-math/README.md"/>
+        <file path="/netlogo-math/math.jardesc"/>
+        <file path="/netlogo-math/LICENSE"/>
+        <javaElement handleIdentifier="=netlogo-math/src"/>
+        <file path="/netlogo-math/manifest.txt"/>
+    </selectedElements>
+</jardesc>

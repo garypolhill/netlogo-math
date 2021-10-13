@@ -1,15 +1,75 @@
 extensions [math]
+
+globals [
+  answer
+  memory
+  operator
+]
+
+to equals
+  ask patch 0 0 [
+    set plabel answer
+  ]
+end
+
+to op [ name ]
+  set operator name
+  set memory answer
+  ask patch 0 1 [
+    set plabel memory
+  ]
+  ask patch 1 1 [
+    set plabel name
+  ]
+  set answer 0
+  equals
+end
+
+to clear
+  set answer 0
+  set memory 0
+  set operator "="
+  ask patches [
+    set plabel ""
+  ]
+  equals
+end
+
+to calc
+  (ifelse operator = "+" [
+    set answer memory + answer
+  ] operator = "-" [
+    set answer memory - answer
+  ] operator = "*" [
+    set answer memory * answer
+  ] operator = "/" [
+    set answer memory / answer
+  ] operator = "=" [
+    set answer answer
+  ] [
+    error (word "I don't know how to \"" operator "\"")
+  ])
+  set memory 0
+  ask patch 0 1 [
+    set plabel ""
+  ]
+  set operator "="
+  ask patch 1 1 [
+    set plabel ""
+  ]
+  equals
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+274
 10
-647
-448
+672
+409
 -1
 -1
-13.0
+130.0
 1
-10
+14
 1
 1
 1
@@ -17,15 +77,491 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-1
+1
+-1
+1
 0
 0
 1
 ticks
 30.0
+
+BUTTON
+9
+10
+72
+43
+pi
+set answer math:pi\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+P
+NIL
+NIL
+1
+
+BUTTON
+138
+369
+201
+402
+=
+calc
+NIL
+1
+T
+OBSERVER
+NIL
+=
+NIL
+NIL
+1
+
+BUTTON
+9
+260
+72
+293
+1
+set answer (10 * answer + 1)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+1
+NIL
+NIL
+1
+
+BUTTON
+137
+225
+200
+258
+AC
+clear
+NIL
+1
+T
+OBSERVER
+NIL
+C
+NIL
+NIL
+1
+
+BUTTON
+73
+260
+136
+293
+2
+set answer 10 * answer + 2\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+2
+NIL
+NIL
+1
+
+BUTTON
+137
+260
+200
+293
+3
+set answer 3 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+3
+NIL
+NIL
+1
+
+BUTTON
+9
+297
+72
+330
+4
+set answer 4 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+4
+NIL
+NIL
+1
+
+BUTTON
+73
+297
+136
+330
+5
+set answer 5 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+5
+NIL
+NIL
+1
+
+BUTTON
+138
+297
+201
+330
+6
+set answer 6 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+6
+NIL
+NIL
+1
+
+BUTTON
+9
+334
+72
+367
+7
+set answer 7 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+7
+NIL
+NIL
+1
+
+BUTTON
+73
+334
+136
+367
+8
+set answer 8 + (10 * answer)\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+8
+NIL
+NIL
+1
+
+BUTTON
+138
+334
+201
+367
+9
+set answer 9 + 10 * answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+9
+NIL
+NIL
+1
+
+BUTTON
+72
+369
+135
+402
+0
+set answer 10 * answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+0
+NIL
+NIL
+1
+
+BUTTON
+204
+260
+267
+293
++
+op \"+\"
+NIL
+1
+T
+OBSERVER
+NIL
++
+NIL
+NIL
+1
+
+BUTTON
+73
+47
+136
+80
+log
+set answer math:log answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+140
+47
+203
+80
+exp
+set answer math:exp answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+8
+137
+71
+170
+sin
+set answer math:sin answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+73
+137
+136
+170
+cos
+set answer math:cos answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+138
+137
+201
+170
+tan
+set answer math:tan answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+73
+173
+136
+206
+acos
+set answer math:acos answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+8
+173
+71
+206
+asin
+set answer math:asin answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+138
+173
+201
+206
+atan
+set answer math:atan answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+73
+84
+136
+117
+log1p
+set answer math:log1p answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+140
+84
+203
+117
+expm1
+set answer math:expm1 answer\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+BUTTON
+74
+11
+137
+44
+e
+set answer math:e\nequals
+NIL
+1
+T
+OBSERVER
+NIL
+E
+NIL
+NIL
+1
+
+BUTTON
+204
+297
+267
+330
+-
+op \"-\"
+NIL
+1
+T
+OBSERVER
+NIL
+-
+NIL
+NIL
+1
+
+BUTTON
+204
+334
+267
+367
+*
+op \"*\"
+NIL
+1
+T
+OBSERVER
+NIL
+*
+NIL
+NIL
+1
+
+BUTTON
+204
+370
+267
+403
+/
+op \"/\"
+NIL
+1
+T
+OBSERVER
+NIL
+/
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
