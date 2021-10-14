@@ -112,7 +112,7 @@ public class MathLibrary implements Reporter {
 		case COSH:
 			return new Double(Math.cos(args[0].getDoubleValue()));
 		case DECREMENT_EXACT:
-			return new Integer(Math.decrementExact(args[0].getIntValue()));
+			return new Double((double)Math.decrementExact(args[0].getIntValue()));
 		case EXP:
 			return new Double(Math.exp(args[0].getDoubleValue()));
 		case EXPM1:
@@ -120,9 +120,9 @@ public class MathLibrary implements Reporter {
 		case FLOOR:
 			return new Double(Math.floor(args[0].getDoubleValue()));
 		case GET_EXPONENT:
-			return new Integer(Math.getExponent(args[0].getDoubleValue()));
+			return new Double((double)Math.getExponent(args[0].getDoubleValue()));
 		case INCREMENT_EXACT:
-			return new Integer(Math.incrementExact(args[0].getIntValue()));
+			return new Double((double)Math.incrementExact(args[0].getIntValue()));
 		case LOG:
 			return new Double(Math.log(args[0].getDoubleValue()));
 		case LOG10:
@@ -130,7 +130,7 @@ public class MathLibrary implements Reporter {
 		case LOG1P:
 			return new Double(Math.log1p(args[0].getDoubleValue()));
 		case NEGATE_EXACT:
-			return new Integer(Math.negateExact(args[0].getIntValue()));
+			return new Double((double)Math.negateExact(args[0].getIntValue()));
 		case NEXT_DOWN:
 			return new Double(Math.nextDown(args[0].getDoubleValue()));
 		case NEXT_UP:
@@ -138,7 +138,7 @@ public class MathLibrary implements Reporter {
 		case RINT:
 			return new Double(Math.rint(args[0].getDoubleValue()));
 		case ROUND:
-			return new Integer(Math.round((float)args[0].getDoubleValue()));
+			return new Double((double)Math.round((float)args[0].getDoubleValue()));
 		case SIGNUM:
 			return new Double(Math.signum(args[0].getDoubleValue()));
 		case SIN:
@@ -154,21 +154,21 @@ public class MathLibrary implements Reporter {
 		case TO_DEGREES:
 			return new Double(Math.toDegrees(args[0].getDoubleValue()));
 		case TO_INT_EXACT:
-			return new Integer(Math.toIntExact(Math.round(args[0].getDoubleValue())));
+			return new Double((double)Math.toIntExact(Math.round(args[0].getDoubleValue())));
 		case TO_RADIANS:
 			return new Double(Math.toRadians(args[0].getDoubleValue()));
 		case ULP:
 			return new Double(Math.ulp(args[0].getDoubleValue()));
 		case ADD_EXACT:
-			return new Integer(Math.addExact(args[0].getIntValue(), args[1].getIntValue()));
+			return new Double((double)Math.addExact(args[0].getIntValue(), args[1].getIntValue()));
 		case ATAN2:
 			return new Double(Math.atan2(args[0].getDoubleValue(), args[1].getDoubleValue()));
 		case COPY_SIGN:
 			return new Double(Math.copySign(args[0].getDoubleValue(), args[1].getDoubleValue()));
 		case FLOOR_DIV:
-			return new Integer(Math.floorDiv(args[0].getIntValue(), args[1].getIntValue()));
+			return new Double((double)Math.floorDiv(args[0].getIntValue(), args[1].getIntValue()));
 		case FLOOR_MOD:
-			return new Integer(Math.floorMod(args[0].getIntValue(), args[1].getIntValue()));
+			return new Double((double)Math.floorMod(args[0].getIntValue(), args[1].getIntValue()));
 		case HYPOT:
 			return new Double(Math.hypot(args[0].getDoubleValue(), args[1].getDoubleValue()));
 		case IEEE_REMAINDER:
@@ -178,7 +178,7 @@ public class MathLibrary implements Reporter {
 		case MIN:
 			return new Double(Math.min(args[0].getDoubleValue(), args[1].getDoubleValue()));
 		case MULTIPLY_EXACT:
-			return new Integer(Math.multiplyExact(args[0].getIntValue(), args[1].getIntValue()));
+			return new Double((double)Math.multiplyExact(args[0].getIntValue(), args[1].getIntValue()));
 		case NEXT_AFTER:
 			return new Double(Math.nextAfter(args[0].getDoubleValue(), args[1].getDoubleValue()));
 		case POW:
@@ -186,7 +186,7 @@ public class MathLibrary implements Reporter {
 		case SCALB:
 			return new Double(Math.scalb(args[0].getDoubleValue(), args[1].getIntValue()));
 		case SUBTRACT_EXACT:
-			return new Integer(Math.subtractExact(args[0].getIntValue(), args[1].getIntValue()));
+			return new Double((double)Math.subtractExact(args[0].getIntValue(), args[1].getIntValue()));
 		default:
 			throw new RuntimeException("BUG! MathLibrary created with unrecognized cmd option");
 		}
