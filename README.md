@@ -1,3 +1,7 @@
+# Note Bene
+
+This version of the code has been updated to 6.3, but since the old version of the extension still works, then there is currently no need to release it to Netlogo. We want to keep the workload on the maintainers of NetLogo to a minimum.
+
 # netlogo-math
 Implement access to the Math library from inside Java. Many of these commands, such as `expm1`, `log1p` and `hypot` will produce better numerical accuracy than calculating them using expressions in code. The following summarizes the commands available.
 
@@ -56,3 +60,29 @@ Implement access to the Math library from inside Java. Many of these commands, s
   + `scalb` -- returns the first argument multiplied by 2 raised to the power of the (integer) second
   + `subtract-exact` -- returns the first argument minus the second, with exception on integer overflow
 
+# Notes
+
+In this latest version I (DS) have included scripts for compilation, build and
+execution of the extension. The scripts to achieve this are in the `script`
+directory. There are in this directory as the compiled Java classes end up in
+the bin directory. This is because the original author (GP) would have used an
+IDE and IDE tend to wipe everything out in the bin directory (assumption of
+authority). I have included scripts, because all this predicates is the
+presence of `javac` and `bash` or `zsh`.
+
+In addition I have added a few more documentation files, or howtos.
+
+# Manifest
+
++ `BUILD.md` - instructions on how to build the extension using javac and bash/zsh.
++ `LICENSE` - the licence under which this code is released - GPLv3
++ `PUBLISHING.md` - how to get all this merged into the Netlogo extensions tab
++ `README.md` - this file
++ `bin` - the directory where the compiled class files are kept.
++ `lib` - the libraries needed to build the jar
++ `manifest.txt` - the manifest for the contents of the jar.
++ `math.jardesc` - ??? - presumably something to do with the IDE that was being used.
++ `netlogo` - a reference program demonstrating use of the extension.
++ `scripts` - compile, build and run scripts.
++ `src` - the source files for the extension.
++ `zip` - where the files are placed for use in publishing.
